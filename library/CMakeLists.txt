@@ -142,6 +142,17 @@ if(BUILD_HIPRAND)
     endif()
 endif()
 
+# In windows, we require the DLLs to be in the same directory as test executables
+if (BUILD_TEST AND WIN32)
+  add_custom_command(
+      TARGET rocrand 
+      POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy
+          $<TARGET_FILE:rocrand>
+          ${PROJECT_BINARY_DIR}/test/$<TARGET_FILE_NAME:rocrand>
+  )
+endif()
+
 rocm_create_package(
     NAME ${package_name}
     DESCRIPTION "Radeon Open Compute RAND library"

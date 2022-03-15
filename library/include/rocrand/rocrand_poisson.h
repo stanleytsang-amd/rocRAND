@@ -148,6 +148,7 @@ template<class State>
 FQUALIFIERS
 unsigned int poisson_distribution(State& state, double lambda)
 {
+	// Original failing code
     if (lambda < lambda_threshold_small)
     {
         return poisson_distribution_small(state, lambda);
@@ -160,6 +161,13 @@ unsigned int poisson_distribution(State& state, double lambda)
     {
         return poisson_distribution_huge(state, lambda);
     }
+/*	
+	// If we take out the other branches then the test pass
+    if (lambda < lambda_threshold_small)
+    {
+        return poisson_distribution_small(state, lambda);
+    }
+*/	
 }
 
 template<class State>
