@@ -35,6 +35,7 @@ function(add_rocrand_benchmark benchmark_src legacy)
     LIST_DIRECTORIES ON
     CONFIGURE_DEPENDS
     ${HIP_DIR}/bin/*.dll
+	${GOOGLEBENCHMARK_ROOT}/bin/*.dll    
     ${CMAKE_SOURCE_DIR}/rtest.*
     )
     foreach( file_i ${third_party_dlls})
