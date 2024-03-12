@@ -53,14 +53,13 @@ Documentation for rocRAND is available at
 * Removed references to and workarounds for deprecated hcc.
 * Support for HIP-CPU
 
-## (Unreleased) rocRAND-3.0.0 for ROCm 6.0.0
+## rocRAND-3.0.0 for ROCm 6.0.0
 
 ### Additions
 
 * Added `rocrand_create_generator_host` with initial support for `ROCRAND_RNG_PSEUDO_PHILOX4_32_10` and `ROCRAND_RNG_PSEUDO_MRG31K3P`.
 * Added the option to create a host generator to the Python wrapper
 * Added the option to create a host generator to the Fortran wrapper
-
 ### Changes
 
 * Generator classes from `rocrand.hpp` are no longer copyable (in previous versions these copies
