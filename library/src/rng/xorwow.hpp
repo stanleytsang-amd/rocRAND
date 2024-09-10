@@ -30,6 +30,7 @@
 #include "system.hpp"
 #include "utils/cpp_utils.hpp"
 
+#include <hip/amd_detail/host_defines.h>
 #include <rocrand/rocrand.h>
 #include <rocrand/rocrand_xorwow.h>
 
